@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allContactsFragment">
+
+    <fragment
+        android:id="@+id/addContactFragment"
+        android:name="com.example.myapplication.util.AddContactFragment"
+        android:label="fragment_add_contact"
+        tools:layout="@layout/fragment_add_contact" >
+        <action
+            android:id="@+id/action_addContactFragment_to_allContactsFragment"
+            app:destination="@id/allContactsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allContactsFragment"
+        android:name="com.example.myapplication.util.AllContactsFragment"
+        android:label="fragment_all_contacts"
+        tools:layout="@layout/fragment_all_contacts" >
+        <action
+            android:id="@+id/action_allContactsFragment_to_addContactFragment"
+            app:destination="@id/addContactFragment" />
+        <action
+            android:id="@+id/action_allContactsFragment_to_contactInfoFragment"
+            app:destination="@id/contactInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactInfoFragment"
+        android:name="com.example.myapplication.util.ContactInfoFragment"
+        android:label="fragment_contact_info"
+        tools:layout="@layout/fragment_contact_info" >
+        <action
+            android:id="@+id/action_contactInfoFragment_to_allContactsFragment"
+            app:destination="@id/allContactsFragment" />
+        <action
+            android:id="@+id/action_contactInfoFragment_to_editContactFragment"
+            app:destination="@id/editContactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editContactFragment"
+        android:name="com.example.myapplication.util.EditContactFragment"
+        android:label="fragment_edit_contact"
+        tools:layout="@layout/fragment_edit_contact" />
+</navigation>
